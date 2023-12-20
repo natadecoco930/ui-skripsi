@@ -48,9 +48,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
                     <div class="brand-text mx-3" style="font-weight: 800;">Online Exams <br>Universitas Bengkulu</div>
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -64,7 +62,6 @@
                         </li>
 
                     </ul>
-
                 </nav>
                 <!-- End of Topbar -->
 
@@ -81,32 +78,20 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Soal 1</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Soal <span id="title-nomor-soal" class="text-primary">1</span></h6>
                                 </div>
                                 <!-- Card Body -->
-                                <div class="card-body" id="soal-wrapper">
-                                    <p>Belajar Merupakan sebuah perubahan:</p>
-                                    <div class="radio-btn">
-                                    <input type="radio" id="html" name="fav_language" value="HTML">
-                                    <label for="html">Kognitif dan psikomotor</label><br>
-                                    <input type="radio" id="css" name="fav_language" value="CSS">
-                                    <label for="css">Psikomotor dan afektif</label><br>
-                                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                                    <label for="javascript">Kognitif, psikomotor, dan afektif</label><br>
-                                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                                    <label for="javascript">Psikologis, psikomotor, dan afektif</label><br>
-                                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                                    <label for="javascript">Psikologis, fisiologis, dan afektif</label><br>
-                                    </div>
+                                <div class="card-body">
+                                    <div id="soal-wrapper"></div>
                                     <div class="flex-box">
                                         <div class="d-flex justify-content-start">
-                                            <a href="">< Sebelumnya</a>
+                                            <a href="javascript:void(0)" id="btn-back">Sebelumnya</a>
                                         </div>
                                         <div class="d-flex justify-content-center">
-                                        <button type="button" onclick="raguRagu(1)" class="btn btn-outline-warning">Ragu-ragu</button>
+                                        <button type="button" id="btn-ragu-ragu" class="btn btn-outline-warning">Ragu-ragu</button>
                                         </div>
                                         <div class="d-flex justify-content-end">
-                                            <a href="soal2.html">Selanjutnya ></a>
+                                            <a href="javascript:void(0)" id="btn-next">Selanjutnya ></a>
                                         </div>                                        
                                     </div>
                                 </div>
@@ -129,57 +114,7 @@
 
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="flex-container ml-3 scroll">
-                                      <div id="jwb1"><a href="index.html">1</a></div>
-                                      <div><a href="soal2.html">2</a></div>
-                                      <div>3</div>  
-                                      <div><a href="javascript:void(1)" onclick="getSoal(4)">4</a></div>
-                                      <div>5</div>
-                                      <div>6</div>  
-                                      <div>7</div>
-                                      <div>8</div>
-                                      <div>9</div>  
-                                      <div>10</div>
-                                      <div>11</div>
-                                      <div>12</div>
-                                      <div>13</div> 
-                                      <div>14</div> 
-                                      <div>15</div> 
-                                      <div>16</div> 
-                                      <div>17</div> 
-                                      <div>18</div> 
-                                      <div>19</div> 
-                                      <div>20</div>
-                                      <div>21</div>
-                                      <div>22</div>
-                                      <div>23</div>  
-                                      <div>24</div>
-                                      <div>25</div>
-                                      <div>26</div>  
-                                      <div>27</div>
-                                      <div>28</div>
-                                      <div>29</div>  
-                                      <div>30</div>
-                                      <div>31</div>
-                                      <div>32</div>
-                                      <div>33</div> 
-                                      <div>34</div> 
-                                      <div>35</div> 
-                                      <div>36</div> 
-                                      <div>37</div> 
-                                      <div>38</div> 
-                                      <div>39</div> 
-                                      <div>40</div>
-                                      <div>41</div>
-                                      <div>42</div>
-                                      <div>43</div> 
-                                      <div>44</div> 
-                                      <div>45</div> 
-                                      <div>46</div> 
-                                      <div>47</div> 
-                                      <div>48</div> 
-                                      <div>49</div> 
-                                      <div>50</div>  
+                                    <div class="flex-container ml-3 scroll d-flex justify-content-start" id="nomor-col">
                                     </div>
                                 </div>
                             </div>
@@ -210,23 +145,6 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="exam.js"></script>
-    <script type="text/javascript">
-        async function getSoal(nomor){
-            var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                       // Typical action to be performed when the document is ready:
-                       document.getElementById("soal-wrapper").innerHTML = xhttp.responseText;
-                    }
-                };
-                xhttp.open("GET", "./soal/empat.html", true);
-                xhttp.send();
-            // response = await fetch(url);
-            // const data = await response.text();
-            // console.log(data);
-            // document.getElementById('soal-wrapper').innerHTML = data;
-        }
-    </script>
 
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -236,51 +154,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-    <script type="text/javascript">
-        var param = 1; // Change this if you want more or les than 2 hours
-
-        var today = new Date();
-        var newDate = today.setHours(today.getHours() + param);
-
-        $('#getting-started').countdown(newDate, function(event) {
-          $(this).html(event.strftime('%H:%M:%S Detik'));
-        });
-
-
-        function raguRagu(id){
-            var btn = document.getElementById(`jwb${id}`);
-            btn.classList.add('bg-warning');
-        }
-    </script>
-
-    <script type="text/javascript">
-        function selesai() {
-            swal({
-              type: "warning",  
-              text:"Apakah anda yakin untuk mengakhiri ujian?",
-              showCancelButton: true,
-              confirmButtonText: "Ya",
-              cancelButtonText: "Tidak",
-              confirmButtonColor: "#35a6Fa",
-              cancelButtonColor: "#e74a3b",
-              reverseButtons: true
-            })
-
-            .then((result)=> {
-                if(result.value){
-                    window.location = 'nilai.html';
-                }
-            });
-        }
-    </script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-
+    <script src="js/custom/ujian.js"></script>
 </body>
 
 </html>
